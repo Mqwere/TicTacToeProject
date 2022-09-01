@@ -21,9 +21,15 @@ public class GameWindow extends JFrame
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 
-		contentPane.setLayout(null);
+		this.contentPane.setLayout(null);
 		
+		GameBoard board = new GameBoard();
 		
+		this.contentPane.add( board );
+		
+		int tenthOfBoardRes = (width >= height? width : height)/12;
+		
+		board.setBounds( tenthOfBoardRes, tenthOfBoardRes, 10 * tenthOfBoardRes, 10 * tenthOfBoardRes );
 
 		this.setContentPane(contentPane);
 		this.setVisible( true );
